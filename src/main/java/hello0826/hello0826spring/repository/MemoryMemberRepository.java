@@ -1,8 +1,11 @@
 package hello0826.hello0826spring.repository;
 
 import hello0826.hello0826spring.domain.Member;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.*;
+
 
 public class MemoryMemberRepository implements MemberRepository{
 

@@ -3,12 +3,21 @@ package hello0826.hello0826spring.service;
 import hello0826.hello0826spring.domain.Member;
 import hello0826.hello0826spring.repository.MemberRepository;
 import hello0826.hello0826spring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
 public class MemberService {
-    public final MemberRepository memberRepository = new MemoryMemberRepository();
+    public final MemberRepository memberRepository;
+
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
 
     /**
      *  회원가입
