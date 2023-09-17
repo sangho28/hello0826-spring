@@ -1,11 +1,13 @@
-package hello.hellospring.repository;
-import hello.hellospring.domain.Member;
+package hello0826.hello0826spring.repository;
+
+import hello0826.hello0826spring.domain.Member;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 public class JdbcMemberRepository implements MemberRepository {
     private final DataSource dataSource;
     public JdbcMemberRepository(DataSource dataSource) {
@@ -13,7 +15,7 @@ public class JdbcMemberRepository implements MemberRepository {
     }
     @Override
     public Member save(Member member) {
-        String sql = "insert into member(name) values(?)";
+        String sql = "insert into member2(name) values(?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -38,7 +40,7 @@ public class JdbcMemberRepository implements MemberRepository {
     }
     @Override
     public Optional<Member> findById(Long id) {
-        String sql = "select * from member where id = ?";
+        String sql = "select * from member2 where id = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -63,7 +65,7 @@ public class JdbcMemberRepository implements MemberRepository {
     }
     @Override
     public List<Member> findAll() {
-        String sql = "select * from member";
+        String sql = "select * from member2";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -87,7 +89,7 @@ public class JdbcMemberRepository implements MemberRepository {
     }
     @Override
     public Optional<Member> findByName(String name) {
-        String sql = "select * from member where name = ?";
+        String sql = "select * from member2 where name = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
